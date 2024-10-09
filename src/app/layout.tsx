@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import Sidebar from '@/components/Sidebar/Sidebar.component';
 
 const NunitoSans = localFont({
   src: [
@@ -30,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${NunitoSans.variable}`}>{children}</body>
+      <body className={`${NunitoSans.variable}`}>
+        <Sidebar />
+
+        {children}
+      </body>
     </html>
   );
 }

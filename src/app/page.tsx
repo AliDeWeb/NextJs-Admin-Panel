@@ -1,3 +1,5 @@
-export default function Home(): JSX.Element {
+const Page = (): JSX.Element => {
   return <></>;
-}
+};
+
+export default Page;
