@@ -1,15 +1,16 @@
 import Link from 'next/link';
+import { JSX } from 'react';
 
 const Sidebar = (): JSX.Element => {
   return (
-    <div className={'bg-componentsBg min-h-dvh w-[240px] px-10 py-6'}>
+    <div className={'min-h-dvh w-[240px] bg-componentsBg px-10 py-6'}>
       <div>
         {/*
           @Section:
             logo and website name section
         */}
         <h1
-          className={'font-NunitoSans text-center text-xl font-bold text-white'}
+          className={'text-center font-NunitoSans text-xl font-bold text-white'}
         >
           <span className={'text-[#4880FF]'}>Dash</span>
           Stack
@@ -22,7 +23,7 @@ const Sidebar = (): JSX.Element => {
         <div className={'mt-[30px]'}>
           <ul
             className={
-              'font-NunitoSans flex flex-col gap-y-2 text-sm font-semibold text-white'
+              'flex flex-col gap-y-2 font-NunitoSans text-sm font-semibold text-white'
             }
           >
             {/*

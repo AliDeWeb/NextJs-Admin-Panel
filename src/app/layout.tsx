@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import Sidebar from '@/components/Sidebar/Sidebar.component';
+import Header from '@/components/Header/Header.component';
 
 const NunitoSans = localFont({
   src: [
@@ -32,7 +33,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${NunitoSans.variable}`}>
-        <Sidebar />
+        <div className={'flex items-start'}>
+          <Sidebar />
+          <Header />
+        </div>
 
         {children}
       </body>

@@ -6,6 +6,12 @@ body {
     background: #1b2531;
 }
 
+@layer base {
+    image {
+        @apply size-full;
+    }
+}
+
 @layer components {
     .active-sidebar-menu {
         @apply bg-[#4880FF];
