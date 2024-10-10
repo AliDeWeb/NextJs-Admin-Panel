@@ -4,12 +4,17 @@ import Link from 'next/link';
 import React from 'react';
 import { SidebarContext } from '@/contexts/Sidebar/Sidebar.context';
 import Overlay from '@/components/Overlay/Overlay.component';
+import { DeviceWidthContext } from '@/contexts/DeviceWidth/DeviceWidth.context';
 
 const Sidebar =
   (): React.JSX.Element => {
     // Contexts
     const { isSidebarOpen } =
       React.useContext(SidebarContext);
+    const { deviceWidth } =
+      React.useContext(
+        DeviceWidthContext,
+      );
 
     return (
       <React.Fragment>
@@ -143,7 +148,7 @@ const Sidebar =
         <Overlay
           isVisible={
             isSidebarOpen &&
-            window.screen.width <= 1024
+            deviceWidth <= 1024
           }
         />
       </React.Fragment>

@@ -3,6 +3,7 @@
 import React from 'react';
 import UserInfos from '@/components/UserInfos/UserInfos.component';
 import { SidebarContext } from '@/contexts/Sidebar/Sidebar.context';
+import { DeviceWidthContext } from '@/contexts/DeviceWidth/DeviceWidth.context';
 
 const Header =
   (): React.JSX.Element => {
@@ -13,6 +14,10 @@ const Header =
     } = React.useContext(
       SidebarContext,
     );
+    const { deviceWidth } =
+      React.useContext(
+        DeviceWidthContext,
+      );
 
     // Callbacks
     const changeSidebarVisibility =
@@ -24,7 +29,7 @@ const Header =
 
     return (
       <header
-        className={`${isSidebarOpen && window.screen.width >= 1024 ? 'w-[calc(100%-240px)]' : 'w-full'} fixed right-0 top-0 z-50 bg-componentsBg px-[30px] py-4 transition-all`}
+        className={`${isSidebarOpen && deviceWidth >= 1024 ? 'w-[calc(100%-240px)]' : 'w-full'} fixed right-0 top-0 z-50 bg-componentsBg px-[30px] py-4 transition-all`}
       >
         <div
           className={

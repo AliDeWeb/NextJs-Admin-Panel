@@ -1,10 +1,11 @@
+import React from 'react';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import Sidebar from '@/components/Sidebar/Sidebar.component';
 import Header from '@/components/Header/Header.component';
 import SidebarContextProvider from '@/contexts/Sidebar/Sidebar.context';
-import React from 'react';
+import DeviceWidthContextProvider from '@/contexts/DeviceWidth/DeviceWidth.context';
 
 const NunitoSans = localFont({
   src: [
@@ -38,12 +39,14 @@ export default function RootLayout({
       <body
         className={`${NunitoSans.variable}`}
       >
-        <SidebarContextProvider>
-          <Sidebar />
-          <Header />
+        <DeviceWidthContextProvider>
+          <SidebarContextProvider>
+            <Sidebar />
+            <Header />
 
-          {children}
-        </SidebarContextProvider>
+            {children}
+          </SidebarContextProvider>
+        </DeviceWidthContextProvider>
       </body>
     </html>
   );
